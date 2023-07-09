@@ -1,0 +1,16 @@
+<div class="main">
+    <div class="row" *ngFor="let color of colors">
+      <div class="color" [ngStyle]="{'background-color': color.color}"></div>
+      <mat-slider
+        class="slider" 
+        [max]="colors.length - 1"
+        min="0"
+        step="1"
+        discrete="true"
+        showTickMarks="true">
+        <input matSliderThumb [(ngModel)]="color.currentValue">
+      </mat-slider>
+    </div>
+  <button mat-raised-button color="primary" (click)="valid()">Valider</button>
+</div>
+
